@@ -17,7 +17,7 @@ Paints-Undo presents a family of models that take an image as input and then out
 You can deploy PaintsUndo locally via:
 
     git clone https://github.com/another-ai/Paints-UNDO-without-conda.git
-    cd Paints-UNDO
+    cd Paints-UNDO-without-conda.git
     py -m venv venv
     .\venv\Scripts\activate
     pip install xformers

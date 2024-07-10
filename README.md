@@ -1,4 +1,4 @@
-# Paints-Undo
+# Paints-UNDO-without-conda.git
 
 PaintsUndo: A Base Model of Drawing Behaviors in Digital Paintings
 
@@ -20,10 +20,10 @@ Paints-Undo presents a family of models that take an image as input and then out
 
 You can deploy PaintsUndo locally via:
 
-    git clone https://github.com/lllyasviel/Paints-UNDO.git
-    cd Paints-UNDO
-    conda create -n paints_undo python=3.10
-    conda activate paints_undo
+    git clone https://github.com/another-ai/Paints-UNDO-without-conda.git
+    cd Paints-UNDO-without-conda.git
+    python -m venv venv
+    .\venv\Scripts\activate
     pip install xformers
     pip install -r requirements.txt
     python gradio_app.py

@@ -18,7 +18,7 @@ You can deploy PaintsUndo locally via:
 
     git clone https://github.com/another-ai/Paints-UNDO-without-conda.git
     cd Paints-UNDO-without-conda.git
-    py -m venv venv
+    python -m venv venv
     .\venv\Scripts\activate
     pip install xformers
     pip install -r requirements.txt

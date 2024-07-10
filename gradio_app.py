@@ -112,7 +112,8 @@ def resize_without_crop(image, target_width, target_height):
 
 @torch.inference_mode()
 def interrogator_process(x):
-    return wd14tagger.default_interrogator(x)
+    image_description = wd14tagger.default_interrogator(x)
+    return image_description, image_description
 
 
 @torch.inference_mode()
@@ -252,8 +253,8 @@ with block:
     with gr.Accordion(label='Step 2: Generate Key Frames', open=True):
         with gr.Row():
             with gr.Column():
-                input_undo_steps = gr.Dropdown(label="Operation Steps", value=[400, 600, 800, 900, 950, 999],
-                                               choices=list(range(1000)), multiselect=True)
+                # input_undo_steps = gr.Dropdown(label="Operation Steps", value=[1, 200, 300, 400, 500, 600, 700, 800, 999, 1000], choices=list(range(1001)), multiselect=True)
+                input_undo_steps = gr.Dropdown(label="Operation Steps", value=[1, 300, 600, 900, 999, 1000], choices=list(range(1001)), multiselect=True)
                 seed = gr.Slider(label='Stage 1 Seed', minimum=0, maximum=50000, step=1, value=12345)
                 image_width = gr.Slider(label="Image Width", minimum=256, maximum=1024, value=512, step=64)
                 image_height = gr.Slider(label="Image Height", minimum=256, maximum=1024, value=640, step=64)
@@ -289,7 +290,7 @@ with block:
     prompt_gen_button.click(
         fn=interrogator_process,
         inputs=[input_fg],
-        outputs=[prompt]
+        outputs=[prompt, i2v_input_text]
     ).then(lambda: [gr.update(interactive=True), gr.update(interactive=True), gr.update(interactive=False)],
            outputs=[prompt_gen_button, key_gen_button, i2v_end_btn])
 
@@ -318,4 +319,4 @@ with block:
         examples_per_page=1024
     )
 
-block.queue().launch(server_name='0.0.0.0')
+block.queue().launch(server_name='127.0.0.1', inbrowser=True)

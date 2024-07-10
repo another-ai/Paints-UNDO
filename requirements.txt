@@ -1,3 +1,7 @@
+--find-links https://download.pytorch.org/whl/cu118
+torch==2.2.1+cu118
+torchvision==0.17.1+cu118
+--find-links https://download.pytorch.org/whl/torch_stable.html
 diffusers==0.28.0
 transformers==4.41.1
 gradio==4.31.5
@@ -9,9 +13,7 @@ tensorboardX
 safetensors
 pillow
 einops
-torch
 peft
 xformers
 onnxruntime
 av
-torchvision

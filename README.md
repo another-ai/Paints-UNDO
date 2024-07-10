@@ -1,4 +1,4 @@
-# Paints-Undo
+# Paints-UNDO-without-conda
 
 PaintsUndo: A Base Model of Drawing Behaviors in Digital Paintings
 

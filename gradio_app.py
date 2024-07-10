@@ -254,10 +254,10 @@ with block:
         with gr.Row():
             with gr.Column():
                 input_undo_steps = gr.Dropdown(label="Operation Steps", value=[1, 400, 600, 800, 900, 950, 999, 1000], choices=list(range(1001)), multiselect=True)
-                seed = gr.Slider(label='Stage 1 Seed', minimum=0, maximum=50000, step=1, value=12345)
-                image_width = gr.Slider(label="Image Width", minimum=256, maximum=1024, value=512, step=64)
-                image_height = gr.Slider(label="Image Height", minimum=256, maximum=1024, value=640, step=64)
-                steps = gr.Slider(label="Steps", minimum=1, maximum=100, value=50, step=1)
+                seed = gr.Slider(label='Stage 1 Seed', minimum=0, maximum=9999999999, step=1, value=12345)
+                image_width = gr.Slider(label="Image Width", minimum=256, maximum=1216, value=512, step=64)
+                image_height = gr.Slider(label="Image Height", minimum=256, maximum=1216, value=640, step=64)
+                steps = gr.Slider(label="Steps", minimum=1, maximum=200, value=50, step=1)
                 cfg = gr.Slider(label="CFG Scale", minimum=1.0, maximum=32.0, value=3.0, step=0.01)
                 n_prompt = gr.Textbox(label="Negative Prompt",
                                       value='lowres, bad anatomy, bad hands, cropped, worst quality')

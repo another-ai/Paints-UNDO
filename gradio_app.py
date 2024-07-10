@@ -270,7 +270,7 @@ with block:
         with gr.Row():
             with gr.Column():
                 i2v_input_text = gr.Text(label='Prompts', value='1girl, masterpiece, best quality')
-                i2v_seed = gr.Slider(label='Stage 2 Seed', minimum=0, maximum=50000, step=1, value=123)
+                i2v_seed = gr.Slider(label='Stage 2 Seed', minimum=0, maximum=9999999999, step=1, value=123)
                 i2v_cfg_scale = gr.Slider(minimum=1.0, maximum=15.0, step=0.5, label='CFG Scale', value=7.5,
                                           elem_id="i2v_cfg_scale")
                 i2v_steps = gr.Slider(minimum=1, maximum=60, step=1, elem_id="i2v_steps",
